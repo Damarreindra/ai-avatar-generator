@@ -34,13 +34,14 @@ const Home = () => {
       setRetry(0);
     }
 
-  
+    const finalInput = input.replace(/raza/gi, 'abraza');
+
     const response = await fetch('/api/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'image/jpeg',
       },
-      body: JSON.stringify({ input }),
+      body: JSON.stringify({ input: finalInput }),
     });
     
     const data = await response.json();
@@ -94,12 +95,11 @@ const Home = () => {
       <div className="container">
         <div className="header">
           <div className="header-title">
-            <h1>Silly Picture Generator</h1>
+            <h1>Me! Picture Generator</h1>
           </div>
           <div className="header-subtitle">
             <h2>
-              Turn me into anyone or me doing anything you want! Make sure you
-              refer to me as "rendra" in the prompt
+              Turn me into anyone or me doing anything you want! u can try "rendra as 3d marvel character" in the prompt
             </h2>
           </div>
           <div className="prompt-container">
