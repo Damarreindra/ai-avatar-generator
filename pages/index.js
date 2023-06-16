@@ -34,14 +34,14 @@ const Home = () => {
       setRetry(0);
     }
 
-    const finalInput = input.replace(/raza/gi, 'abraza');
+   
 
     const response = await fetch('/api/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'image/jpeg',
       },
-      body: JSON.stringify({ input: finalInput }),
+      body: JSON.stringify({ input }),
     });
     
     const data = await response.json();
